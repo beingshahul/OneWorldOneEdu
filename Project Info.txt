@@ -1,0 +1,16 @@
+Project Name:
+	Centalised OpenCourseWare Portal:"One World,One Education"
+
+Team Members:
+	Adikeshav S 	( Reg No:12110600 )
+	Akhil Mohan 	( Reg No:12110602 )
+	Nikhil Mohan	( Reg No:12110679 )
+	Shahul Hameed	( Reg No:12110702 )
+	Sidharth R Nair	( Reg No:12110705 )
+
+Project Guide:
+	Ms. Jyothirmayi Devi
+		Assistant Professor
+		Department of Computer Engineering
+		College of Engineering, Chengannur
+		

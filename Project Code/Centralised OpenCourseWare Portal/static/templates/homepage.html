@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %} HomePage {% endblock %}
+{% block homecontent %}
+{%load staticfiles%}
+	<div class="jumbotron" id="div-jumbotron">
+		<img src="{%static 'images/home-img.jpg'%}" />
+   <!-- <div class="container">
+      <!-- <h1>Welcome!</h1> -->
+      <!--<img src="{%static 'images/home-img.jpg'%}" />
+      <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+   </div> -->
+    
+  </div>
+<div id="frmsearch">
+            		
+            	<form class="form-horizontal" action="{% url 'Search:search' %}" method="post">
+                <div class="input-append" id="input-search">
+                  {% csrf_token %}
+                  <input type="search" name="query" class="form-control" placeholder="Search for any course..">
+                  
+                  
+                </div>
+              </form>
+              </div>
+  <div class="container">
+      <!-- Example row of columns -->
+      
+    <div class="row">
+      <div class="col-md-4">
+        <h2>About..</h2>
+        <p>1W1E is an initiative which helps the students across the globe to access the educational contents available freely on the Internet such as from OpenCourseWares (OCW) easily and effectively.  We seek to engender a culture of openness in education to allow everyone, everywhere to access the education they desire, while providing a shared body of knowledge and best practices that can be drawn upon for innovative and effective approaches.</p>
+        <p><a class="btn btn-default" href="{% url 'about' %}" role="button">View details &raquo;</a></p>
+      </div>
+        
+      <div class="col-md-4">
+        {% if user.is_authenticated %}
+          <h2>Recommended Courses</h2>
+          {% for each_course in course %}
+            <a href="{% url 'Search:course_details' each_course.slug %}">{{ each_course.title }}</a><br>
+          {% endfor %}
+        {% else %}
+          <h2>Latest Courses</h2>
+          {% for each_course in lcourses %}
+            <a href="{% url 'Search:course_details' each_course.slug %}">{{ each_course.title }}</a><br>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="col-md-4">
+        
+          <h2>Useful Links</h2>
+          <ul>
+            <li><a href="http://nptel.ac.in">NPTEL</a></li>
+            <li><a href="http://mit.edu">MIT OCW</a></li>
+            <li><a href="http://ocwconsortium.org">OCW Consortium</a></li>
+            <li><a href="http://ocw.uci.edu">UCI OCW</a></li>
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+{% endblock %}

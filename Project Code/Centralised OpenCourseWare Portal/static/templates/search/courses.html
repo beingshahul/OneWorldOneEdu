@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Search {% endblock %}
+
+{% block body %}
+	<div> 
+		<ol>
+			{% for each_course in course %}
+				<li>
+					<a href="{% url 'Search:course_details' each_course.slug %}">{{ each_course.title }}</a><br>
+				</li>
+			{% endfor %} 
+		</ol>
+	</div>
+{% endblock %}

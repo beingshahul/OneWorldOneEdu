@@ -1,0 +1,21 @@
+from django.shortcuts import render, render_to_response, RequestContext
+from django.contrib import messages
+
+from app.models import OpenCourse
+from .forms import AddCourseForm
+
+# Create your views here.
+
+def home(request):
+    form = AddCourseForm(request.POST or None)
+    
+    if form.is_valid():
+        save_it = form.save(commit=False)
+        save_it.save()
+        messages.success(request, 'Course Added Successfully!')
+        
+        
+    return render_to_response("add_course.html",locals(), context_instance=RequestContext(request))
+
+def homepage(request):
+    return render_to_response("homepage.html",locals(), context_instance=RequestContext(request))

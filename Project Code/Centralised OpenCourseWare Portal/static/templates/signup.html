@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} User SignUp {% endblock %}
+
+{% block body %}
+    <form  method="post" id="table-signup">
+        {% csrf_token %}
+        <table width="1000px" >
+            {% for each_field in form1 %}  
+            <div style="padding=10px" class="form-group signup"> 
+                <tr style="padding=10px">
+                    <td>{{each_field.label}}</td>
+                    <td>{{each_field}}</td>
+                    <td>{{each_field.errors}}</td>
+                    <td> {{each_field.help_text}} </td> 
+                </tr>
+            </div> 
+            {% endfor %}
+            {% for each_field in form2 %}  
+            <div style="padding=10px" class="form-group signup"> 
+                <tr style="padding=10px">
+                    <td>{{each_field.label}}</td>
+                    <td>{{each_field}}</td>
+                    <td>{{each_field.errors}}</td>
+                    <td> {{each_field.help_text}} </td> 
+                </tr>
+            </div>  
+        {% endfor %}
+        </table>         
+        <input type="submit" value="Submit Form" id="but-submit">
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Search {% endblock %}
+
+{% block body %}
+	<div class="container" >
+		<div class="row">
+			<div class="col-md-5">
+				<ul class="list-group">
+					{% for each_item in list %}
+						<li class="list-group-item">
+							<a href="{% url 'Search:slanguage' each_item.language %}">{{ each_item.language }}</a><br>
+						</li>
+					{% endfor %} 
+				</ul>
+			</div>
+			<div class="col-md-7"> 
+				<ol>
+					{% for each_course in course %}
+						<li>
+							<a href="{% url 'Search:course_details' each_course.slug %}">{{ each_course.title }}</a><br>
+						</li>
+					{% endfor %} 
+				</ol>
+				</div>
+			</div>
+		</div>
+{% endblock %}

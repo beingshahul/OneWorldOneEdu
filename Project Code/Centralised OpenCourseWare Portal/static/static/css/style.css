@@ -1,0 +1,53 @@
+#frmsearch{
+	float:left;
+	
+	width:100%;
+	background:#D6E9F9;
+	padding: 5px;
+	border-radius:5px;
+}
+#a_signup:hover{
+	
+	background:#fff;
+	
+}
+#div_login{
+	float:right;
+}
+
+::-webkit-input-placeholder {
+	 text-align:center; 
+	 color:red;
+}
+input:-moz-placeholder {
+	 text-align:center; 
+	 color:red;
+}
+#div-jumbotron{
+	margin-bottom:10px;
+}
+
+#div-nav{
+	height:60px;
+}
+#but-submit
+{
+	background: #3276B1;
+	border:solid 1px;
+	border-radius:5px;
+	color:#fff;
+	height:40px;
+}
+#table-signup{
+	padding:20px;
+	border:solid 1px #000;
+	margin:10px;
+}
+.signup{
+	margin:10px;
+}
+#mainContent
+{
+max-width:900px;
+}
+

@@ -1,0 +1,16 @@
+from django.shortcuts import render
+
+from app.models import OpenCourse
+# Create your views here.
+
+def provider(request):
+    send_dict ={}
+    item = OpenCourse.objects.values('provider').distinct()
+    send_dict['provider'] = item
+    return render_to_response('search/provider.html',send_dict, context_instance=RequestContext(request))
+
+def language(request):
+    send_dict ={}
+    item = OpenCourse.objects.values('language').distinct()
+    send_dict['course'] = item
+    return render_to_response('search/language.html',send_dict, context_instance=RequestContext(request))
